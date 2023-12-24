@@ -21,7 +21,7 @@ const App = () => {
     (async () => {
       try {
         const res = await instance.get(
-          "https://openapi.naver.com/v1/search/image.json?query=당근&display=100"
+          "/v1/search/image.json?query=당근&display=100"
         );
         setDaangn(res.data.items);
       } catch (err) {
