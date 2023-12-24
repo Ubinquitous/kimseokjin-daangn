@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(45deg, #ffa500, #ff6347);
+  animation: gradientAnimation 1s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rotating-image {
+  animation: rotate 0.2s linear infinite; /* 회전 애니메이션 설정 */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); /* 0도에서 시작 */
+  }
+  to {
+    transform: rotate(360deg); /* 360도까지 회전 */
+  }
+}
+
+.text-animation {
+  animation: texts 0.08s linear infinite;
+}
+
+@keyframes texts {
+  from {
+    transform: rotate(-10deg);
+    font-size: 20px;
+  }
+  to {
+    transform: rotate(10deg);
+    font-size: 50px;
+  }
+}
