@@ -7,8 +7,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const instance = axios.create({
   headers: {
-    "X-Naver-Client-Id": "KIWjCkIpNX9B_sFSjXVU",
-    "X-Naver-Client-Secret": "YrVcSniRWF",
+    Authorization: "KakaoAK d079fb133baf05fdd9977e2acd6f9213",
   },
   withCredentials: false,
 });
@@ -21,9 +20,9 @@ const App = () => {
     (async () => {
       try {
         const res = await instance.get(
-          "https://openapi.naver.com/v1/search/image.json?query=당근&display=100"
+          "https://dapi.kakao.com/v2/search/image?query=당근&size=50"
         );
-        setDaangn(res.data.items);
+        setDaangn(res.data.documents);
       } catch (err) {
         console.log(err);
       }
@@ -31,7 +30,7 @@ const App = () => {
   }, []);
 
   const handle당근바꾸기ㅋㅋ = () => {
-    if (count > 95) setCount(0);
+    if (count > 45) setCount(0);
     setCount(count + 4);
   };
 
@@ -40,12 +39,12 @@ const App = () => {
       <div className="flex flex-col gap-20">
         <img
           alt="사진이안보이면API연결이안된거란다"
-          src={daangn[count]?.thumbnail}
+          src={daangn[count]?.image_url}
           className="w-52"
         />
         <img
           alt="사진이안보이면API연결이안된거란다"
-          src={daangn[count + 1]?.thumbnail}
+          src={daangn[count + 1]?.image_url}
           className="w-52"
         />
       </div>
@@ -73,12 +72,12 @@ const App = () => {
       <div className="flex flex-col gap-20">
         <img
           alt="사진이안보이면API연결이안된거란다"
-          src={daangn[count + 2]?.thumbnail}
+          src={daangn[count + 2]?.image_url}
           className="w-52"
         />
         <img
           alt="사진이안보이면API연결이안된거란다"
-          src={daangn[count + 3]?.thumbnail}
+          src={daangn[count + 3]?.image_url}
           className="w-52"
         />
       </div>
