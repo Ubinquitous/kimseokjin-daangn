@@ -5,7 +5,6 @@ import axios from "axios";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// 쓸사람써라 ㅋㅋ
 const instance = axios.create({
   headers: {
     "X-Naver-Client-Id": "KIWjCkIpNX9B_sFSjXVU",
